@@ -20,12 +20,9 @@ export default function App() {
     return null;
   }
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text style={{fontFamily:"Cabinet-Grotesk"}}>Open up App.js to start working on your app!</Text>
-    
-      <LabelGray> Hello World</LabelGray>
-      <LabelLink> Hello World</LabelLink>
-      <StatusBar style="auto" />
+    <View className="flex-1 items-center pt-11 bg-light-200">
+      
+    <StatusBar style="auto" />
     </View>
   );
 }
