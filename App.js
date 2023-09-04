@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
+import { LabelGray } from './src/Typography'
 import * as SplashScreen from 'expo-splash-screen';
 
 export default function App() {
@@ -20,7 +21,9 @@ export default function App() {
   }
   return (
     <View className="flex-1 items-center justify-center bg-white">
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text style={{fontFamily:"Cabinet-Grotesk"}}>Open up App.js to start working on your app!</Text>
+    
+      <LabelGray> Hello World</LabelGray>
       <StatusBar style="auto" />
     </View>
   );
