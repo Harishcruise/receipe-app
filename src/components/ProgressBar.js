@@ -9,7 +9,7 @@ const ProgressBar = ({first,middle,last}) => {
       <Progress.Bar color='#060813' style={{borderRadius:0,backgroundColor:"#E0E0E0",borderWidth:0,height:6}} progress={middle} width={100} />
       <Progress.Bar color='#060813' style={{borderTopLeftRadius:0,borderBottomLeftRadius:0,backgroundColor:"#E0E0E0",borderWidth:0,height:6}} progress={last} width={100} />
     </View>
-  )
+  )  
 }
 
 export default ProgressBar
