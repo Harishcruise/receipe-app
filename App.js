@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import {LabelGray, LabelLink} from './src/Typography'
 import * as SplashScreen from 'expo-splash-screen';
-import { ProgressBar } from './components';
+import { ProgressBar } from './src/components';
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -22,7 +22,7 @@ export default function App() {
   }
   return (
     <View className="flex-1 items-center pt-11 bg-light-200">
-    <ProgressBar />
+    <ProgressBar first={1} middle={1} last={0} />
     <StatusBar style="auto" />
     </View>
   );
