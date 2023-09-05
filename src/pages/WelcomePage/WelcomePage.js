@@ -1,5 +1,5 @@
 import { View, TouchableOpacity } from 'react-native'
-import {ProgressBar} from '../../components'
+import {ProgressBar} from '../../components/Progress'
 import {LabelLink} from '../../Typography'
 import {CustomButton1} from '../../components/Buttons' 
 import React, { useState } from 'react'
