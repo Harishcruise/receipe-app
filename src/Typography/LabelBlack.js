@@ -4,7 +4,7 @@ import React from 'react'
 const LabelBlack = ({style,children}) => {
   return (
     <>
-      <Text className='text-dark-200 font-bold' style={{fontFamily:"Cabinet-Grotesk",...style}} >{children}</Text>
+      <Text className='text-dark-200 font-bold' style={{fontFamily:"Cabinet-Grotesk-Bold",...style}} >{children}</Text>
     </>
   )
 }
