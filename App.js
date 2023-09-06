@@ -1,9 +1,7 @@
 import { useCallback } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import {LoginPage,SignUpPage} from './src/pages/Onboarding';
+import { StackNavigation } from './src/navigation';
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -22,11 +20,9 @@ export default function App() {
     return null;
   }
   return (
-    <View className="flex-1 items-center pt-10 bg-light-200">
-    {/* <LoginPage/> */}
-    <SignUpPage/>
-    <StatusBar backgroundColor='' style="auto" />
-    </View>
+    
+    <StackNavigation/>
+   
   );
 }
 

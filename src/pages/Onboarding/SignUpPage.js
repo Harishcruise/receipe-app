@@ -4,8 +4,9 @@ import {HeaderSecondVariant} from '../../components/Header'
 import { LabelBlack, LabelGray, LabelLink } from '../../Typography'
 import {CustomButton1} from '../../components/Buttons'
 import { PasswordInputField, TextInputField } from '../../components/InputField'
+import { WrapBackground } from '../../components/Background'
 
-const SignUpPage = () => {
+const SignUpPage = ({navigation}) => {
   const [signUpData, setSignUpData] = useState({
     name:'',
     email:'',
@@ -14,8 +15,8 @@ const SignUpPage = () => {
     confirmPassword:'',
   })
   return (
-    <>
-      <HeaderSecondVariant/>
+    <WrapBackground>
+      <HeaderSecondVariant onPress={()=>navigation.goBack()} />
       <View style={{gap:20}} className='flex px-4 py-3 w-[100%]'>
             <View style={{gap:7}} className='flex'>
             <LabelBlack style={{fontSize:24}}>Register your account</LabelBlack>
@@ -45,7 +46,7 @@ const SignUpPage = () => {
             </View>
 
       </View>
-    </>
+    </WrapBackground>
   )
 }
 

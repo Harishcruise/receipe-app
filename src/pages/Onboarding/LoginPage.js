@@ -5,8 +5,9 @@ import { LabelBlack, LabelGray, LabelLink } from '../../Typography'
 import {CustomButton1, CustomButton3} from '../../components/Buttons'
 import { PasswordInputField, TextInputField } from '../../components/InputField'
 import {google} from '../../../assets/images'
+import { WrapBackground } from '../../components/Background'
 
-const LoginPage = () => {
+const LoginPage = ({navigation}) => {
   const [loginData, setLoginData] = useState({
     email:'',
     password:'',
@@ -28,8 +29,8 @@ const LoginPage = () => {
 
 
   return (
-    <>
-        <HeaderSecondVariant/>
+    <WrapBackground>
+        <HeaderSecondVariant onPress={()=>navigation.goBack()} />
 
         <View style={{gap:36}} className='flex px-4 py-3 w-[100%]'>
             <View style={{gap:7}} className='flex'>
@@ -44,7 +45,7 @@ const LoginPage = () => {
 
             <View style={{gap:20}} className='flex items-center'>
                 <View style={{gap:8}}  className='flex flex-row justify-between'>
-                    <CustomButton1 style={{width:"49%"}}>Login</CustomButton1>
+                    <CustomButton1 style={{width:"49%"}} onPress={()=>navigation.navigate('signup')} >Login</CustomButton1>
                     <CustomButton3 style={{width:"49%"}}>Use Phone</CustomButton3>
                 </View>
 
@@ -61,7 +62,7 @@ const LoginPage = () => {
                 </View>
             </View>
         </View>
-    </>
+    </WrapBackground>
   )
 }
 

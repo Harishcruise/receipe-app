@@ -2,12 +2,13 @@ import { View, TouchableOpacity } from 'react-native'
 import {ProgressBar} from '../../components/Progress'
 import {LabelLink} from '../../Typography'
 import {CustomButton1} from '../../components/Buttons' 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import WelcomeSection1 from '../Welcome/WelcomeSection1'
 import WelcomeSection2 from '../Welcome/WelcomeSection2'
 import WelcomeSection3 from '../Welcome/WelcomeSection3'
+import { WrapBackground } from '../../components/Background'
 
-const WelcomePage = () => {
+const WelcomePage = ({navigation}) => {
   
   const [step, setStep] = useState(1);
 
@@ -15,7 +16,15 @@ const WelcomePage = () => {
     1:WelcomeSection1,
     2:WelcomeSection2,
     3:WelcomeSection3,
+    4:WelcomeSection3
   }
+
+  useEffect(()=>{
+    if(step===4){
+      setStep(1)
+      navigation.navigate('login')
+    }
+  },[step])
 
   const progressVal = {
     1:{
@@ -32,6 +41,11 @@ const WelcomePage = () => {
       first:1,
       middle:1,
       last:1,
+    },
+    4:{
+      first:1,
+      middle:1,
+      last:1,
     }
   }
 
@@ -39,6 +53,7 @@ const WelcomePage = () => {
   const CurrentVal = progressVal[step];
 
   return (
+    <WrapBackground>
     <View style={{gap:32}} className='flex py-[70px] px-3 items-center'>
       <ProgressBar first={CurrentVal.first} middle={CurrentVal.middle} last={CurrentVal.last}  />
       
@@ -55,6 +70,7 @@ const WelcomePage = () => {
       </View>
 
     </View>
+    </WrapBackground>
   )
 }
 
