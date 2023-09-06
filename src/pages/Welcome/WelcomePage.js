@@ -3,9 +3,9 @@ import {ProgressBar} from '../../components/Progress'
 import {LabelLink} from '../../Typography'
 import {CustomButton1} from '../../components/Buttons' 
 import React, { useState } from 'react'
-import WelcomeSection1 from '../WelcomePage/WelcomeSection1'
-import WelcomeSection2 from '../WelcomePage/WelcomeSection2'
-import WelcomeSection3 from '../WelcomePage/WelcomeSection3'
+import WelcomeSection1 from '../Welcome/WelcomeSection1'
+import WelcomeSection2 from '../Welcome/WelcomeSection2'
+import WelcomeSection3 from '../Welcome/WelcomeSection3'
 
 const WelcomePage = () => {
   
