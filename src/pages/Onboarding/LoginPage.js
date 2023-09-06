@@ -1,5 +1,5 @@
 import { View, Image, TouchableOpacity} from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import {HeaderSecondVariant} from '../../components/Header'
 import { LabelBlack, LabelGray, LabelLink } from '../../Typography'
 import {CustomButton1, CustomButton3} from '../../components/Buttons'
@@ -7,6 +7,26 @@ import { PasswordInputField, TextInputField } from '../../components/InputField'
 import {google} from '../../../assets/images'
 
 const LoginPage = () => {
+  const [loginData, setLoginData] = useState({
+    email:'',
+    password:'',
+  })
+
+  const onChangeEmail=(text)=>{
+    setLoginData({
+        email:text,
+        password:loginData.password,
+    })
+  }
+
+  const onChangePassword=(text)=>{
+    setLoginData({
+        email:loginData.email,
+        password:text,
+    })
+  }
+
+
   return (
     <>
         <HeaderSecondVariant/>
@@ -18,8 +38,8 @@ const LoginPage = () => {
             </View>
 
             <View style={{gap:12}} className='flex'>
-                <TextInputField keyboardType={'email-address'}>Email Address</TextInputField>
-                <PasswordInputField>Password</PasswordInputField>
+                <TextInputField value={loginData.email} onChangeText={onChangeEmail} keyboardType={'email-address'}>Email Address</TextInputField>
+                <PasswordInputField value={loginData.password} onChangeText={onChangePassword}>Password</PasswordInputField>
             </View>
 
             <View style={{gap:20}} className='flex items-center'>
