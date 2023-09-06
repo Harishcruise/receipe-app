@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import WelcomePage from './src/pages/WelcomePage/WelcomePage';
+import {WelcomePage} from './src/pages/Welcome';
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -21,9 +21,11 @@ export default function App() {
     return null;
   }
   return (
-    <View className="flex-1 items-center pt-11 bg-light-200">
+    <View className="flex-1 items-center pt-10 bg-light-200">
+   
     <WelcomePage/>
-    <StatusBar style="auto" />
+
+    <StatusBar backgroundColor='' style="auto" />
     </View>
   );
 }
