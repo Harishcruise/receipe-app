@@ -4,7 +4,7 @@ import React from 'react'
 const LabelGray = ({style,children}) => {
   return (
     <>
-      <Text className='text-dark-600 font-bold' style={{fontFamily:"Cabinet-Grotesk-Medium",...style}} >{children}</Text>
+      <Text className='text-dark-600' style={{fontFamily:"Cabinet-Grotesk-Medium",...style}} >{children}</Text>
     </>
   )
 }
