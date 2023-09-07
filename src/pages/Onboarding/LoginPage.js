@@ -46,7 +46,7 @@ const LoginPage = ({navigation}) => {
             <View style={{gap:20}} className='flex items-center'>
                 <View style={{gap:8}}  className='flex flex-row justify-between'>
                     <CustomButton1 style={{width:"49%"}} onPress={()=>navigation.navigate('signup')} >Login</CustomButton1>
-                    <CustomButton3 style={{width:"49%"}}>Use Phone</CustomButton3>
+                    <CustomButton3 style={{width:"49%"}} onPress={()=>navigation.navigate('loginwithphone')}>Use Phone</CustomButton3>
                 </View>
 
                 <LabelGray>Other Options</LabelGray>
