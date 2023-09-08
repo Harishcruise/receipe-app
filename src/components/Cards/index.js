@@ -1,0 +1,1 @@
+export {default as FollowChefCard} from './FollowChefCard'

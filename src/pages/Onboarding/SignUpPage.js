@@ -5,6 +5,9 @@ import { LabelBlack, LabelGray, LabelLink } from '../../Typography'
 import {CustomButton1} from '../../components/Buttons'
 import { PasswordInputField, TextInputField } from '../../components/InputField'
 import { WrapBackground } from '../../components/Background'
+import {PhoneNumberInputField} from '../../components/InputField'
+
+
 
 const SignUpPage = ({navigation}) => {
   const [signUpData, setSignUpData] = useState({
@@ -27,7 +30,7 @@ const SignUpPage = ({navigation}) => {
             <View style={{gap:12}} className='flex'>
                 <TextInputField value={signUpData.name} onChangeText={(text)=>setSignUpData({...signUpData,name:text})} keyboardType={'default'}>Name</TextInputField>
                 <TextInputField value={signUpData.email} onChangeText={(text)=>setSignUpData({...signUpData,email:text})} keyboardType={'email-address'}>Email Address</TextInputField>
-                <TextInputField value={signUpData.phoneNo} onChangeText={(text)=>setSignUpData({...signUpData,phoneNo:text})} keyboardType={'phone-pad'}>Phone Number</TextInputField>
+                <PhoneNumberInputField value={signUpData.phoneNo} onChangeFormattedText={(text)=>setSignUpData({...signUpData,phoneNo:text})}>Phone Number</PhoneNumberInputField>
                 <PasswordInputField value={signUpData.password} onChangeText={(text)=>setSignUpData({...signUpData,password:text})}>Password</PasswordInputField>
                 <PasswordInputField value={signUpData.confirmPassword} onChangeText={(text)=>setSignUpData({...signUpData,confirmPassword:text})}>Confirm Password</PasswordInputField>
                 
@@ -39,7 +42,7 @@ const SignUpPage = ({navigation}) => {
             <View style={{gap:4}} className='flex flex-row'>
                  <LabelGray style={{color:"#353535"}}>Already have an account</LabelGray>
 
-                 <TouchableOpacity>
+                 <TouchableOpacity onPress={()=>navigation.navigate('login')}>
                  <LabelLink>Login</LabelLink>
                  </TouchableOpacity>
             </View>

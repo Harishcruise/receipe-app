@@ -38,6 +38,7 @@ const OtpVerificationPage = ({navigation,route}) => {
               <View style={{gap:20}} className='flex items-center'>
                   <View style={{gap:8}}  className='flex flex-row justify-between'>
                       <CustomButton1 style={{width:"100%"}} onPress={()=>{Alert.alert("wait for backend")}} >Request OTP</CustomButton1>
+
                   </View>
   
           

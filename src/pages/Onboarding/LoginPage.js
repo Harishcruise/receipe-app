@@ -4,7 +4,7 @@ import {HeaderSecondVariant} from '../../components/Header'
 import { LabelBlack, LabelGray, LabelLink } from '../../Typography'
 import {CustomButton1, CustomButton3} from '../../components/Buttons'
 import { PasswordInputField, TextInputField } from '../../components/InputField'
-import {google} from '../../../assets/images'
+import {google,home} from '../../../assets/images'
 import { WrapBackground } from '../../components/Background'
 
 const LoginPage = ({navigation}) => {
@@ -51,12 +51,12 @@ const LoginPage = ({navigation}) => {
 
                 <LabelGray>Other Options</LabelGray>
 
-                <CustomButton1 logo={<Image className="w-6 h-6" source={google}/>}>Google</CustomButton1>
+                <CustomButton1 onPress={()=>navigation.navigate('tab')} logo={<Image className="w-6 h-6" source={google}/>}>Google</CustomButton1>
 
                 <View style={{gap:4}} className='flex flex-row'>
                  <LabelGray style={{color:"#353535"}}>Don’t have an account</LabelGray>
 
-                 <TouchableOpacity>
+                 <TouchableOpacity onPress={()=>navigation.navigate('signup')}>
                  <LabelLink>Signup</LabelLink>
                  </TouchableOpacity>
                 </View>

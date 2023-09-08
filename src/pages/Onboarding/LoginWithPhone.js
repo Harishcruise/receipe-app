@@ -3,12 +3,13 @@ import React, { useState } from 'react'
 import {HeaderSecondVariant} from '../../components/Header'
 import { LabelBlack, LabelGray, LabelLink } from '../../Typography'
 import {CustomButton1, CustomButton3} from '../../components/Buttons'
-import { PasswordInputField, TextInputField } from '../../components/InputField'
+import { TextInputField, PhoneNumberInputField } from '../../components/InputField'
 import {google} from '../../../assets/images'
 import { WrapBackground } from '../../components/Background'
 
 const LoginWithPhone = ({navigation}) => {
   const [loginWithPhoneData, setLoginWithPhoneData] = useState({phone:'',})
+  const [formatedData,setFormatedData] = useState('')
 
   const onChangePhone=(text)=>{
     setLoginWithPhoneData({  
@@ -17,14 +18,11 @@ const LoginWithPhone = ({navigation}) => {
   }
 
   const onRequestOtp=()=>{
-    if(loginWithPhoneData.phone.length==10){
+    if(loginWithPhoneData.phone.length===10){
       navigation.navigate('OtpVerificationPage',{
-        phoneNumber:loginWithPhoneData.phone})
+        phoneNumber:formatedData})
     }
-    else{
-      Alert.alert("You need to enter a 10 digit numbers")
-    }
-  }
+  };
 
   return (
     <WrapBackground>
@@ -37,8 +35,7 @@ const LoginWithPhone = ({navigation}) => {
             </View>
 
             <View style={{gap:12}} className='flex'>
-                <TextInputField value={loginWithPhoneData.phone} onChangeText={onChangePhone} keyboardType={'numeric'}>Phone Number</TextInputField>
-                
+            <PhoneNumberInputField value={loginWithPhoneData.phone} onChangeFormattedText={(text)=>setFormatedData(text)} onChangeText={onChangePhone}>Phone Number</PhoneNumberInputField>       
             </View>
 
             <View style={{gap:20}} className='flex items-center'>
@@ -50,13 +47,7 @@ const LoginWithPhone = ({navigation}) => {
             </View>
         </View>
     </WrapBackground>
-  )
+  );
+};
 
-  
-  }
-
-
- 
-
-
-export default LoginWithPhone
+export default LoginWithPhone;
