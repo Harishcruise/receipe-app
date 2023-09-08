@@ -63,7 +63,7 @@ const WelcomePage = ({navigation}) => {
        
        <View style={{gap:10}} className='flex items-center'>
        <CustomButton1 style={{width:"85%"}} onPress={()=>setStep(step+1)}>Get started</CustomButton1>
-       <TouchableOpacity>
+       <TouchableOpacity onPress={()=>navigation.navigate('signup')}>
        <LabelLink style={{fontSize:14,color:"#666666"}}> Skip </LabelLink>
        </TouchableOpacity>   
        </View>

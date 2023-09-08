@@ -39,7 +39,7 @@ const SignUpPage = ({navigation}) => {
             <View style={{gap:4}} className='flex flex-row'>
                  <LabelGray style={{color:"#353535"}}>Already have an account</LabelGray>
 
-                 <TouchableOpacity>
+                 <TouchableOpacity onPress={()=>navigation.navigate('login')}>
                  <LabelLink>Login</LabelLink>
                  </TouchableOpacity>
             </View>
