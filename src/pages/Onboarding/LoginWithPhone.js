@@ -1,4 +1,4 @@
-import { View, Image, TouchableOpacity} from 'react-native'
+import { View, Image, TouchableOpacity, Alert} from 'react-native'
 import React, { useState } from 'react'
 import {HeaderSecondVariant} from '../../components/Header'
 import { LabelBlack, LabelGray, LabelLink } from '../../Typography'
@@ -8,15 +8,22 @@ import {google} from '../../../assets/images'
 import { WrapBackground } from '../../components/Background'
 
 const LoginWithPhone = ({navigation}) => {
-  const [loginWithPhoneData, setLoginWithPhoneData] = useState({
-    
-    phone:'',
-  })
+  const [loginWithPhoneData, setLoginWithPhoneData] = useState({phone:'',})
 
   const onChangePhone=(text)=>{
     setLoginWithPhoneData({  
         phone:text,
     })
+  }
+
+  const onRequestOtp=()=>{
+    if(loginWithPhoneData.phone.length==10){
+      navigation.navigate('OtpVerificationPage',{
+        phoneNumber:loginWithPhoneData.phone})
+    }
+    else{
+      Alert.alert("You need to enter a 10 digit numbers")
+    }
   }
 
   return (
@@ -36,7 +43,7 @@ const LoginWithPhone = ({navigation}) => {
 
             <View style={{gap:20}} className='flex items-center'>
                 <View style={{gap:8}}  className='flex flex-row justify-between'>
-                    <CustomButton1 style={{width:"100%"}} onPress={()=>navigation.navigate('signup')} >Request OTP</CustomButton1>
+                    <CustomButton1 style={{width:"100%"}} onPress={onRequestOtp} >Request OTP</CustomButton1>
                 </View>
 
         
