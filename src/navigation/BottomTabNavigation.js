@@ -2,6 +2,7 @@ import React from 'react'
 import { Image, Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { LoginWithPhone } from '../pages/Onboarding';
+import { Profile } from '../pages/Profile';
 import { home,homeFill,explore,exploreFill,heart,heartFill,profile,profileFill } from '../../assets/images'; 
 
 const Tab = createBottomTabNavigator();
@@ -33,7 +34,7 @@ const BottomTabNavigation = () => {
     <Tab.Screen name="Home" options={{headerShown: false,}} component={LoginWithPhone} />
     <Tab.Screen name="Explore" options={{headerShown: false}} component={LoginWithPhone} />
     <Tab.Screen name="Liked Recipes" options={{headerShown: false}} component={LoginWithPhone} />
-    <Tab.Screen name="Profile" options={{headerShown: false}} component={LoginWithPhone} />
+    <Tab.Screen name="Profile" options={{headerShown: false}} component={Profile} />
 
     </Tab.Navigator>
   )
