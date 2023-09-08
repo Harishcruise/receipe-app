@@ -7,7 +7,7 @@ const PhoneNumberInputField = ({children,onChangeText,value,onChangeCountry,onCh
   return (
     <View style={{gap:8}} className='flex w-[100%]'>
         <LabelGray style={{fontSize:14}}>{children}</LabelGray>
-        <PhoneInput defaultCode="US" placeholder='   ' onChangeCountry={onChangeCountry} onChangeFormattedText={onChangeFormattedText} textInputProps={{maxLength:10,}} value={value} onChangeText={onChangeText}  containerStyle={{borderRadius:6,backgroundColor:"#F3F3F3",width:"100%"}} textInputStyle={{fontFamily:"Cabinet-Grotesk-Bold"}} textContainerStyle={{borderRadius:6,backgroundColor:"#F3F3F3",width:'100%'}} />
+        <PhoneInput defaultCode="CA" placeholder='  ' onChangeCountry={onChangeCountry} onChangeFormattedText={onChangeFormattedText} textInputProps={{maxLength:10,}} value={value} onChangeText={onChangeText}  containerStyle={{borderRadius:6,backgroundColor:"#F3F3F3",width:"100%"}} textInputStyle={{fontFamily:"Cabinet-Grotesk-Bold"}} textContainerStyle={{borderRadius:6,backgroundColor:"#F3F3F3",width:'100%'}} />
     </View>
     
   )

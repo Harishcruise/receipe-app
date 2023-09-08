@@ -8,6 +8,7 @@ import { WrapBackground } from '../../components/Background'
 import {PhoneNumberInputField} from '../../components/InputField'
 
 
+
 const SignUpPage = ({navigation}) => {
   const [signUpData, setSignUpData] = useState({
     name:'',
@@ -29,7 +30,7 @@ const SignUpPage = ({navigation}) => {
             <View style={{gap:12}} className='flex'>
                 <TextInputField value={signUpData.name} onChangeText={(text)=>setSignUpData({...signUpData,name:text})} keyboardType={'default'}>Name</TextInputField>
                 <TextInputField value={signUpData.email} onChangeText={(text)=>setSignUpData({...signUpData,email:text})} keyboardType={'email-address'}>Email Address</TextInputField>
-                <PhoneNumberInputField value={signUpData.phoneNo} onChangeFormattedText={(text)=>setSignUpData({...setSignUpData,phoneNo:text})} onChangeText={(text)=>setSignUpData({...signUpData,phoneNo:text})}>Phone Number</PhoneNumberInputField>
+                <PhoneNumberInputField value={signUpData.phoneNo} onChangeFormattedText={(text)=>setSignUpData({...signUpData,phoneNo:text})}>Phone Number</PhoneNumberInputField>
                 <PasswordInputField value={signUpData.password} onChangeText={(text)=>setSignUpData({...signUpData,password:text})}>Password</PasswordInputField>
                 <PasswordInputField value={signUpData.confirmPassword} onChangeText={(text)=>setSignUpData({...signUpData,confirmPassword:text})}>Confirm Password</PasswordInputField>
                 
