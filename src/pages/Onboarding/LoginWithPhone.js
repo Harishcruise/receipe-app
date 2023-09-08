@@ -22,10 +22,7 @@ const LoginWithPhone = ({navigation}) => {
       navigation.navigate('OtpVerificationPage',{
         phoneNumber:formatedData})
     }
-    else{
-      Alert.alert("You need to enter a 10 digit numbers")
-    }
-  }
+  };
 
   return (
     <WrapBackground>
@@ -50,13 +47,7 @@ const LoginWithPhone = ({navigation}) => {
             </View>
         </View>
     </WrapBackground>
-  )
+  );
+};
 
-  
-  }
-
-
- 
-
-
-export default LoginWithPhone
+export default LoginWithPhone;

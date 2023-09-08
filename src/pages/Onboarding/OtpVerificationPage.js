@@ -33,7 +33,7 @@ const OtpVerificationPage = ({navigation,route}) => {
   
               <View style={{gap:20}} className='flex items-center'>
                   <View style={{gap:8}}  className='flex flex-row justify-between'>
-                      <CustomButton1 style={{width:"100%"}} onPress={()=>navigation.navigate('OtpVerificationPage')} >Request OTP</CustomButton1>
+                      <CustomButton1 style={{width:"100%"}} onPress={()=>navigation.navigate('OtpVerificationPage', { phoneNumber: '1234567890' })} >Request OTP</CustomButton1>
                   </View>
   
           
