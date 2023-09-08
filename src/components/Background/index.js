@@ -1,0 +1,1 @@
+export {default as WrapBackground} from './WrapBackground'

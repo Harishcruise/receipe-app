@@ -1,13 +1,13 @@
 import { useCallback } from 'react';
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
-import {LabelGray, LabelLink} from './src/Typography'
 import * as SplashScreen from 'expo-splash-screen';
+import { StackNavigation } from './src/navigation';
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     'Cabinet-Grotesk': require('./assets/fonts/CabinetGrotesk-Regular.otf'),
+    'Cabinet-Grotesk-Bold': require('./assets/fonts/CabinetGrotesk-Bold.otf'),
+    'Cabinet-Grotesk-Medium': require('./assets/fonts/CabinetGrotesk-Medium.otf'),
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -20,13 +20,9 @@ export default function App() {
     return null;
   }
   return (
-    <View className="flex-1 items-center justify-center bg-white">
-      <Text style={{fontFamily:"Cabinet-Grotesk"}}>Open up App.js to start working on your app!</Text>
     
-      <LabelGray> Hello World</LabelGray>
-      <LabelLink> Hello World</LabelLink>
-      <StatusBar style="auto" />
-    </View>
+    <StackNavigation/>
+   
   );
 }
 
