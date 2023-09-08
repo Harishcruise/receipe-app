@@ -21,6 +21,8 @@ const LoginWithPhone = ({navigation}) => {
     if(loginWithPhoneData.phone.length===10){
       navigation.navigate('OtpVerificationPage',{
         phoneNumber:formatedData})
+    }else{
+      Alert.alert("Enter 10 Digit Number")
     }
   };
 
