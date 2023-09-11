@@ -9,6 +9,10 @@ import { WrapBackground } from '../../components/Background'
 
 const LoginWithPhone = ({navigation}) => {
   const [loginWithPhoneData, setLoginWithPhoneData] = useState({phone:'',})
+  const [status, setStatus] = useState({
+    focus:false,
+    notValid:false
+  })
   const [formatedData,setFormatedData] = useState('')
 
   const onChangePhone=(text)=>{
@@ -37,7 +41,7 @@ const LoginWithPhone = ({navigation}) => {
             </View>
 
             <View style={{gap:12}} className='flex'>
-            <PhoneNumberInputField value={loginWithPhoneData.phone} onChangeFormattedText={(text)=>setFormatedData(text)} onChangeText={onChangePhone}>Phone Number</PhoneNumberInputField>       
+            <PhoneNumberInputField onBlur={()=>setStatus({...status,focus:false})} onFocus={()=>setStatus({...status,focus:true})} focusStatus={status.focus} errorState={status.notValid} value={loginWithPhoneData.phone} onChangeFormattedText={(text)=>setFormatedData(text)} onChangeText={onChangePhone}>Phone Number</PhoneNumberInputField>       
             </View>
 
             <View style={{gap:20}} className='flex items-center'>

@@ -6,10 +6,10 @@ import { setting } from '../../../assets/images'
 import { LabelBlack, LabelGray } from '../../Typography'
 import { FollowChefCard } from '../../components/Cards'
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
     <WrapBackground>
-      <HeaderSecondVariant backIconColor='#FFE5EC' style={{height:255,elevation:5,backgroundColor:"#FFE5EC",borderBottomLeftRadius:40,borderBottomRightRadius:40}} rightIcon={<Image source={setting} className='w-6 h-6 mt-[1px]' />}>
+      <HeaderSecondVariant rightOnPress={()=>navigation.navigate('setting')} backIconColor='#FFE5EC' style={{height:255,elevation:5,backgroundColor:"#FFE5EC",borderBottomLeftRadius:40,borderBottomRightRadius:40}} rightIcon={<Image source={setting} className='w-6 h-6 mt-[1px]' />}>
       
       <View style={{shadowColor: '#000',shadowOffset: { height: 2 },shadowOpacity:  0.2,shadowRadius: 3,elevation:5}} className=' w-[100%] flex items-center px-11 pt-16'>
 

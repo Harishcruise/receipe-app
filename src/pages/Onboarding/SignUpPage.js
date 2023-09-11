@@ -17,6 +17,29 @@ const SignUpPage = ({navigation}) => {
     password:'',
     confirmPassword:'',
   })
+
+  const [signUpStatus, setSignUpStatus] = useState({
+    name:{
+      onfocus:false,
+      notValid:false
+    },
+    email:{
+      onfocus:false,
+      notValid:false
+    },
+    phoneNo:{
+      onfocus:false,
+      notValid:false
+    },
+    password:{
+      onfocus:false,
+      notValid:false
+    },
+    confirmPassword:{
+      onfocus:false,
+      notValid:false
+    },
+  })
   return (
     <WrapBackground>
       <HeaderSecondVariant onPress={()=>navigation.goBack()} />
@@ -27,12 +50,12 @@ const SignUpPage = ({navigation}) => {
             </View>   
 
 
-            <View style={{gap:12}} className='flex'>
-                <TextInputField value={signUpData.name} onChangeText={(text)=>setSignUpData({...signUpData,name:text})} keyboardType={'default'}>Name</TextInputField>
-                <TextInputField value={signUpData.email} onChangeText={(text)=>setSignUpData({...signUpData,email:text})} keyboardType={'email-address'}>Email Address</TextInputField>
-                <PhoneNumberInputField value={signUpData.phoneNo} onChangeFormattedText={(text)=>setSignUpData({...signUpData,phoneNo:text})}>Phone Number</PhoneNumberInputField>
-                <PasswordInputField value={signUpData.password} onChangeText={(text)=>setSignUpData({...signUpData,password:text})}>Password</PasswordInputField>
-                <PasswordInputField value={signUpData.confirmPassword} onChangeText={(text)=>setSignUpData({...signUpData,confirmPassword:text})}>Confirm Password</PasswordInputField>
+            <View style={{gap:10}} className='flex'>
+                <TextInputField focusStatus={signUpStatus.name.onfocus} onFocus={()=>setSignUpStatus({...signUpStatus,name:{...signUpStatus.name,onfocus:true}})} onBlur={()=>setSignUpStatus({...signUpStatus,name:{...signUpStatus.name,onfocus:false}})} errorMsg="Enter your Name" errorState={signUpStatus.name.notValid} value={signUpData.name} onChangeText={(text)=>setSignUpData({...signUpData,name:text})} keyboardType={'default'}>Name</TextInputField>
+                <TextInputField focusStatus={signUpStatus.email.onfocus} onFocus={()=>setSignUpStatus({...signUpStatus,email:{...signUpStatus.email,onfocus:true}})} onBlur={()=>setSignUpStatus({...signUpStatus,email:{...signUpStatus.email,onfocus:false}})} errorMsg="Enter a valid email address" errorState={signUpStatus.email.notValid} value={signUpData.email} onChangeText={(text)=>setSignUpData({...signUpData,email:text})} keyboardType={'email-address'}>Email Address</TextInputField>
+                <PhoneNumberInputField focusStatus={signUpStatus.phoneNo.onfocus} onFocus={()=>setSignUpStatus({...signUpStatus,phoneNo:{...signUpStatus.phoneNo,onfocus:true}})} onBlur={()=>setSignUpStatus({...signUpStatus,phoneNo:{...signUpStatus.phoneNo,onfocus:false}})} errorMsg="Enter a valid phone number" errorState={signUpStatus.phoneNo.notValid} value={signUpData.phoneNo} onChangeFormattedText={(text)=>setSignUpData({...signUpData,phoneNo:text})}>Phone Number</PhoneNumberInputField>
+                <PasswordInputField focusStatus={signUpStatus.password.onfocus} onFocus={()=>setSignUpStatus({...signUpStatus,password:{...signUpStatus.password,onfocus:true}})} onBlur={()=>setSignUpStatus({...signUpStatus,password:{...signUpStatus.password,onfocus:false}})} errorMsg="Enter a strong password" errorState={signUpStatus.password.notValid} value={signUpData.password} onChangeText={(text)=>setSignUpData({...signUpData,password:text})}>Password</PasswordInputField>
+                <PasswordInputField focusStatus={signUpStatus.confirmPassword.onfocus} onFocus={()=>setSignUpStatus({...signUpStatus,confirmPassword:{...signUpStatus.confirmPassword,onfocus:true}})} onBlur={()=>setSignUpStatus({...signUpStatus,confirmPassword:{...signUpStatus.confirmPassword,onfocus:false}})} errorMsg="Enter the correct password" errorState={signUpStatus.confirmPassword.notValid} value={signUpData.confirmPassword} onChangeText={(text)=>setSignUpData({...signUpData,confirmPassword:text})}>Confirm Password</PasswordInputField>
                 
             </View>
 

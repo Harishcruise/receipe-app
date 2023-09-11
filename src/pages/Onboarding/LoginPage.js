@@ -13,6 +13,17 @@ const LoginPage = ({navigation}) => {
     password:'',
   })
 
+  const [loginStatus, setLoginStatus] = useState({
+    email:{
+      onfocus:false,
+      notValid:false
+    },
+    password:{
+      onfocus:false,
+      notValid:false
+    }
+  })
+
   const onChangeEmail=(text)=>{
     setLoginData({
         email:text,
@@ -27,7 +38,6 @@ const LoginPage = ({navigation}) => {
     })
   }
 
-
   return (
     <WrapBackground>
         <HeaderSecondVariant onPress={()=>navigation.goBack()} />
@@ -39,8 +49,8 @@ const LoginPage = ({navigation}) => {
             </View>
 
             <View style={{gap:12}} className='flex'>
-                <TextInputField value={loginData.email} onChangeText={onChangeEmail} keyboardType={'email-address'}>Email Address</TextInputField>
-                <PasswordInputField value={loginData.password} onChangeText={onChangePassword}>Password</PasswordInputField>
+                <TextInputField focusStatus={loginStatus.email.onfocus} onFocus={()=>setLoginStatus({...loginStatus,email:{...loginStatus.email,onfocus:true}})} onBlur={()=>setLoginStatus({...loginStatus,email:{...loginStatus.email,onfocus:false}})} value={loginData.email} onChangeText={onChangeEmail} keyboardType={'email-address'} errorMsg="Enter a valid email address" errorState={loginStatus.email.notValid}>Email Address</TextInputField>
+                <PasswordInputField focusStatus={loginStatus.password.onfocus} onFocus={()=>setLoginStatus({...loginStatus,password:{...loginStatus.password,onfocus:true}})} onBlur={()=>setLoginStatus({...loginStatus,password:{...loginStatus.password,onfocus:false}})} value={loginData.password} onChangeText={onChangePassword} errorMsg="Enter the correct password" errorState={loginStatus.password.notValid}>Password</PasswordInputField>
             </View>
 
             <View style={{gap:20}} className='flex items-center'>

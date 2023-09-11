@@ -1,11 +1,11 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { instagram, twitter } from '../../../assets/images'
 import { LabelBlack, LabelGray } from '../../Typography'
 
 const FollowChefCard = () => {
   return (
-    <View style={{gap:16,shadowColor: '#000',shadowOffset: { height: 2 },shadowOpacity:  0.2,shadowRadius: 3,elevation:5}} className='flex w-[100%] h-20 rounded-xl flex-row p-3 bg-[#FFFFFF] items-center'>
+    <TouchableOpacity style={{gap:16,shadowColor: '#000',shadowOffset: { height: 2 },shadowOpacity:  0.2,shadowRadius: 3,elevation:5}} className='flex w-[100%] h-20 rounded-xl flex-row p-3 bg-[#FFFFFF] items-center'>
          <Image className='w-14 h-14 rounded bg-light-800' />
 
          <View className='flex w-48'>
@@ -17,7 +17,7 @@ const FollowChefCard = () => {
             <Image source={instagram} className='w-5 h-5'/>
             <Image source={twitter} className='w-5 h-5'/>
          </View>
-    </View>
+    </TouchableOpacity>
   )
 }
 
