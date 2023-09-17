@@ -50,7 +50,7 @@ const SignUpPage = ({navigation}) => {
             </View>   
 
 
-            <View style={{gap:10}} className='flex'>
+            <View style={{gap:6}} className='flex'>
                 <TextInputField focusStatus={signUpStatus.name.onfocus} onFocus={()=>setSignUpStatus({...signUpStatus,name:{...signUpStatus.name,onfocus:true}})} onBlur={()=>setSignUpStatus({...signUpStatus,name:{...signUpStatus.name,onfocus:false}})} errorMsg="Enter your Name" errorState={signUpStatus.name.notValid} value={signUpData.name} onChangeText={(text)=>setSignUpData({...signUpData,name:text})} keyboardType={'default'}>Name</TextInputField>
                 <TextInputField focusStatus={signUpStatus.email.onfocus} onFocus={()=>setSignUpStatus({...signUpStatus,email:{...signUpStatus.email,onfocus:true}})} onBlur={()=>setSignUpStatus({...signUpStatus,email:{...signUpStatus.email,onfocus:false}})} errorMsg="Enter a valid email address" errorState={signUpStatus.email.notValid} value={signUpData.email} onChangeText={(text)=>setSignUpData({...signUpData,email:text})} keyboardType={'email-address'}>Email Address</TextInputField>
                 <PhoneNumberInputField focusStatus={signUpStatus.phoneNo.onfocus} onFocus={()=>setSignUpStatus({...signUpStatus,phoneNo:{...signUpStatus.phoneNo,onfocus:true}})} onBlur={()=>setSignUpStatus({...signUpStatus,phoneNo:{...signUpStatus.phoneNo,onfocus:false}})} errorMsg="Enter a valid phone number" errorState={signUpStatus.phoneNo.notValid} value={signUpData.phoneNo} onChangeFormattedText={(text)=>setSignUpData({...signUpData,phoneNo:text})}>Phone Number</PhoneNumberInputField>

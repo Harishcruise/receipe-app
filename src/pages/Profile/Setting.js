@@ -15,8 +15,8 @@ const Setting = ({navigation}) => {
 
         <View className='flex w-[100%] px-4 mt-4'>
 
-        <SettingSelection iconLeft={profile2} iconRight={<AntDesign name="right" size={24} color="#060813" />} >Account information</SettingSelection>
-        <SettingSelection iconLeft={bell} iconRight={<AntDesign name="right" size={24} color="#060813" />} >Notifications</SettingSelection>
+        <SettingSelection onPress={()=>navigation.navigate('account')} iconLeft={profile2} iconRight={<AntDesign name="right" size={24} color="#060813" />} >Account information</SettingSelection>
+        <SettingSelection onPress={()=>navigation.navigate('notification')} iconLeft={bell} iconRight={<AntDesign name="right" size={24} color="#060813" />} >Notifications</SettingSelection>
         <SettingSelection iconLeft={cookie} iconRight={<Switch2/>} >Only show vegan recipes</SettingSelection>
         <SettingSelection iconLeft={lock} iconRight={<AntDesign name="right" size={24} color="#060813" />} >Terms and Conditions</SettingSelection>
         <SettingSelection iconLeft={globe} iconRight={<AntDesign name="right" size={24} color="#060813" />} >Language (English)</SettingSelection>

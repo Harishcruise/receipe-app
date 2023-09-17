@@ -1,10 +1,11 @@
-import { View, Text, TouchableWithoutFeedback, Keyboard} from 'react-native'
+import { View, StatusBar, Text, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import React from 'react'
 
-const WrapBackground = ({style,children}) => {
+const WrapBackground = ({style,children,feedBack=false}) => {
   return (
-    <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-    <View className="flex-1 items-center pt-10 bg-light-200"> 
+
+    <TouchableWithoutFeedback disabled={feedBack} onPress={Keyboard.dismiss} accessible={false}>
+    <View className="pt-10 bg-light-200 flex-1"> 
     {children}
     </View>
     </TouchableWithoutFeedback>
