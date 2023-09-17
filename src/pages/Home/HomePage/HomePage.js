@@ -6,6 +6,7 @@ import CookNow from './CookNow'
 import FoodStories from './FoodStories'
 import FamousChefs from './FamousChefs'
 import Flyer from './Flyer'
+import LocalRecipe from './LocalRecipe'
 
 const HomePage = () => {
   return (
@@ -21,6 +22,8 @@ const HomePage = () => {
       <FoodStories/>
 
       <FamousChefs/>
+
+      <LocalRecipe/>
 
     </ScrollView>
     </WrapBackground>
