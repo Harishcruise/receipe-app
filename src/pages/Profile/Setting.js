@@ -11,6 +11,8 @@ import { CustomButton3 } from '../../components/Buttons'
 const Setting = ({navigation}) => {
   return (
     <WrapBackground>
+
+    <View className='items-center flex'>
         <HeaderFirstVariant onPress={()=>navigation.goBack()}  style={{elevation:5}}>Settings</HeaderFirstVariant>
 
         <View className='flex w-[100%] px-4 mt-4'>
@@ -24,6 +26,8 @@ const Setting = ({navigation}) => {
         </View>
 
         <CustomButton3 style={{width:"40%",marginTop:24}}>Delete account</CustomButton3>
+
+    </View> 
     </WrapBackground>
   )
 }

@@ -8,6 +8,8 @@ import { LabelBlack, LabelGray } from '../../Typography'
 const Notification = ({navigation}) => {
   return (
     <WrapBackground>
+
+        <View className='items-center flex'> 
         <HeaderFirstVariant onPress={()=>navigation.goBack()}  style={{elevation:5}}>Notifications</HeaderFirstVariant>
 
         <View style={{gap:12}} className='flex w-[100%] px-6 mt-5'>
@@ -28,6 +30,8 @@ const Notification = ({navigation}) => {
         <Switch1/>
         </View>
 
+
+        </View>
 
         </View>
     </WrapBackground>
