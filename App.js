@@ -2,6 +2,8 @@ import { useCallback } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { StackNavigation } from './src/navigation';
+import { FollowChefCard } from './src/components/Cards';
+import {Radio} from './src/components/Radio'
 
 export default function App() {
   const [fontsLoaded, fontError] = useFonts({
@@ -21,7 +23,9 @@ export default function App() {
   }
   return (
     
-    <StackNavigation/>
+    // <StackNavigation/>
+    <Radio/>
+   
    
   );
 }
