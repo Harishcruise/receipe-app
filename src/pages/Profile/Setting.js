@@ -21,7 +21,7 @@ const Setting = ({navigation}) => {
         <SettingSelection onPress={()=>navigation.navigate('notification')} iconLeft={bell} iconRight={<AntDesign name="right" size={24} color="#060813" />} >Notifications</SettingSelection>
         <SettingSelection iconLeft={cookie} iconRight={<Switch2/>} >Only show vegan recipes</SettingSelection>
         <SettingSelection iconLeft={lock} iconRight={<AntDesign name="right" size={24} color="#060813" />} >Terms and Conditions</SettingSelection>
-        <SettingSelection iconLeft={globe} iconRight={<AntDesign name="right" size={24} color="#060813" />} >Language (English)</SettingSelection>
+        <SettingSelection onPress={()=>navigation.navigate('language')} iconLeft={globe} iconRight={<AntDesign name="right" size={24} color="#060813" />} >Language (English)</SettingSelection>
         <SettingSelection iconLeft={info} iconRight={<AntDesign name="right" size={24} color="#060813" />} >About Us</SettingSelection>
         </View>
 

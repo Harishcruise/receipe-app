@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {WelcomePage} from '../pages/Welcome'
 import { StatusBar } from 'expo-status-bar';
 import {LoginPage, SignUpPage, LoginWithPhone,OtpVerificationPage} from '../pages/Onboarding'
-import { Setting, Notification, AccountInfo  } from '../pages/Profile';
+import { Setting, Notification, AccountInfo, Languages  } from '../pages/Profile';
 import BottomTabNavigation from './BottomTabNavigation';
 
 const Stack = createNativeStackNavigator();
@@ -24,6 +24,7 @@ const StackNavigation = () => {
         <Stack.Screen name="setting" options = {{headerShown: false}} component={Setting} />
         <Stack.Screen name="account" options = {{headerShown: false}} component={AccountInfo} />
         <Stack.Screen name="notification" options = {{headerShown: false}} component={Notification} />
+        <Stack.Screen name="language" options = {{headerShown: false}} component={Languages} />
       </Stack.Navigator>
 
       <StatusBar backgroundColor='' style="auto" />

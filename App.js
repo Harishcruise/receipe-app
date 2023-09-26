@@ -4,6 +4,8 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StackNavigation } from './src/navigation';
 import { View } from 'react-native'
 import { SearchBar } from './src/components/SearchBar';
+import { Notification } from './src/pages/Profile';
+import {Languages} from './src/pages/Profile';
 
 
 export default function App() {
@@ -24,6 +26,7 @@ export default function App() {
   }
   return (
     
+    // <Languages/>
     <StackNavigation/>
 
     // <View className='flex flex-1 items-center py-20'>
