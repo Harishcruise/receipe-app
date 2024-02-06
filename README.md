@@ -15,7 +15,7 @@ Installation
 Before you start, ensure you have Node.js and npm or Yarn installed.
 
 1. Clone this repository:
-git clone https://github.com/your-username/recipe-app.git
+git clone https://github.com/Harishcruise/recipe-app.git
 
 2. Navigate into the project directory:
 cd recipe-app
